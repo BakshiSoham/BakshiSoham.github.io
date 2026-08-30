@@ -20,7 +20,7 @@ Modern data science and machine learning present new challenges that calls for r
 2. **Selective Inference for Time-varying Effect Moderation**  
    *Authors:* Soham Bakshi, Walter Dempsey, Snigdha Panigrahi  
    *Year:* 2024  
-   *Link:* [arXiv:2412.20535](https://arxiv.org/abs/2411.15908)
+   *Link:* [arXiv:2411.15908](https://arxiv.org/abs/2411.15908)
 
 3. **Bayes Classifier Cannot Be Learned from Noisy Responses with Unknown Noise Rates**  
    *Authors:* Soham Bakshi, Subha Maity  
@@ -41,14 +41,17 @@ Modern data science and machine learning present new challenges that calls for r
 
 # Selected Talks
 
-1. **Selective Inference for Time-Varying Moderated Effects** [*(slides)*](assets/file/SIMRTSlides.pdf)  
+1. **Randomized Trees with Conditional Inference** [*(slides)*](assets/file/SIRTreesJSM26.pdf)  
+   *Joint Statistical Meeting (JSM) 2026, Boston, MA, USA*
+
+2. **Selective Inference for Time-Varying Moderated Effects** [*(slides)*](assets/file/SIMRTSlides.pdf)  
    *Statistical Analysis of Multi-Outcome Data (SAM) 2024, Salzburg, Austria*
    
-2. **Non-Identifiability of Bayes Classifier** [*(slides)*](assets/file/slides_jsm.pdf)  
-   *Joint Statistical Meet (JSM) 2023, Torronto, Canada*
+3. **Non-Identifiability of Bayes Classifier** [*(slides)*](assets/file/slides_jsm.pdf)  
+   *Joint Statistical Meeting (JSM) 2023, Toronto, Canada*
 
-3. **Geomnetry in Statistics** [*(slides)*](assets/file/slides_statgeo.pdf)  \
+4. **Geometry in Statistics** [*(slides)*](assets/file/slides_statgeo.pdf)  
    *Math Club 2022, Indian Statistical Institute, Bangaluru Centre, India*
    
-4. **Hopf-Rinow's theorem and Geodesic Completeness** [*(slides)*](assets/file/VSRP.pdf)  
+5. **Hopf-Rinow's theorem and Geodesic Completeness** [*(slides)*](assets/file/VSRP.pdf)  
    *Visiting Students Research Program (VSRP) 2021, School of Mathematics, TIFR, India*
