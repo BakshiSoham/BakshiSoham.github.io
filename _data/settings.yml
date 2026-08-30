@@ -9,6 +9,7 @@ menu:
 social:
 - {icon: 'fa-brands fa-github',         link: 'https://github.com/BakshiSoham'}
 - {icon: 'fa-brands fa-google-scholar', link: 'https://scholar.google.com/citations?user=WuIfUrYAAAAJ&hl=en'}
+- {icon: 'fa-brands fa-orcid',          link: 'https://orcid.org/0009-0004-9011-8412'}
 - {icon: 'fa-brands fa-linkedin-in',    link: 'https://www.linkedin.com/in/soham-bakshi-186b56180'}
 - {icon: 'fa-solid fa-file-lines',      link: '/assets/file/cv.pdf'}
 - {icon: 'fa-solid fa-envelope',        link: 'mailto:bakso@umich.edu'}
