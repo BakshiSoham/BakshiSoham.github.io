@@ -10,8 +10,14 @@
 #   sort_field: 'date'
 #   sort_reverse: true
 
-baseurl: /homepage
-url: ""
+baseurl: ""
+url: "https://bakshisoham.github.io"
+
+# The Lagrange templates reference {{ site.github.url }}, which is normally
+# injected by jekyll-github-metadata on GitHub's legacy builder. This site is
+# built by GitHub Actions with its own Gemfile, so define it explicitly.
+github:
+  url: "https://bakshisoham.github.io"
 
 # jekyll-paginate configuration
 paginate:            5
