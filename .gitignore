@@ -5,3 +5,8 @@ Gemfile.lock
 .jekyll-metadata
 .DS_Store
 .jekyll-cache
+
+# local preview / toolchain
+vendor/
+.bundle/
+_config.local.yml
