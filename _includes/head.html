@@ -1,60 +1,53 @@
 <head>
-  <title>
-    {% if page.title == "Home" %}
-      {{ site.title }} | {{ site.description }}
-    {% else %}
-      {{ page.title }} | {{ site.title }}
-    {% endif %}
-  </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <link rel="stylesheet" href="{{ site.github.url }}/assets/css/main.css">
-  <link rel="stylesheet" href="{{ site.github.url }}/assets/css/syntax.css">
-  <!-- Use Atom -->
-  {% feed_meta %}
-  <!-- Use RSS-2.0 -->
-  <!--<link href="{{ site.github.url }}/rss-feed.xml" type="application/rss+xml" rel="alternate" title="{{ site.title }} | {{ site.description }}"/>
-  //-->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
-<!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-    MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        }
-      });
-    
-    const toggle = document.getElementById('toggle');
-    const body = document.body;
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
 
-    const elements = document.querySelectorAll('a, h1, h2, h3, h4, h5, h6, blockquote');
-    
-    elements.forEach(el => {
-      el.classList.add('light');
-    });
+  <title>
+    {%- if page.url == "/" -%}
+      {{ site.title }} | {{ site.description }}
+    {%- else -%}
+      {{ page.title }} | {{ site.title }}
+    {%- endif -%}
+  </title>
 
-
-    body.classList.add('light');
-
-    toggle.addEventListener('click', () => {
-        if (body.classList.contains('light')) {
-            body.classList.replace('light', 'dark');
-            elements.forEach(el => {
-              el.classList.replace('light', 'dark');
-            });
-        } else {
-            body.classList.replace('dark', 'light');
-            elements.forEach(el => {
-              el.classList.replace('dark', 'light');
-            });
-        }
-    });
+  {%- comment -%}
+    Resolve the theme before first paint so there is no flash of the wrong
+    ground. Dark is the default: prefers-color-scheme is deliberately not
+    consulted, so a visitor with nothing stored always gets dark. This script
+    must stay blocking and stay ahead of the stylesheet.
+  {%- endcomment -%}
+  <script>
+    document.documentElement.dataset.theme =
+      localStorage.getItem('site-theme') || 'dark';
   </script>
-  <!-- Google Analytics -->
-  {% include google-analytics.html %}
-  <!-- Use Jekyll SEO plugin -->
+
+  <link rel="stylesheet" href="{{ site.github.url }}/assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  {%- comment -%}
+    MathJax 3. The configuration object gets its own script tag: MathJax 2 used
+    to read the inline body of its own loader tag, which is why the old theme
+    toggle lived in there and only ran by accident.
+  {%- endcomment -%}
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      svg: { fontCache: 'local' }
+    };
+  </script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+
+  {% feed_meta %}
   {% seo %}
 </head>

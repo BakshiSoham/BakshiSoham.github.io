@@ -1,0 +1,102 @@
+$fonts: "/assets/fonts" !default;
+
+/*
+  Latin Modern (GUST, GFL), converted from the OTF sources to WOFF2.
+  Latin Modern has no Bengali coverage, so Noto Serif Bengali is listed after
+  it in the stacks below for the হ য ব র ল pages.
+*/
+
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("#{$fonts}/lmroman10-regular.woff2") format("woff2");
+  font-style: normal; font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("#{$fonts}/lmroman10-bold.woff2") format("woff2");
+  font-style: normal; font-weight: 700; font-display: swap;
+}
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("#{$fonts}/lmroman10-italic.woff2") format("woff2");
+  font-style: italic; font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("#{$fonts}/lmroman10-bolditalic.woff2") format("woff2");
+  font-style: italic; font-weight: 700; font-display: swap;
+}
+@font-face {
+  font-family: "Latin Modern Sans";
+  src: url("#{$fonts}/lmsans10-regular.woff2") format("woff2");
+  font-style: normal; font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: "Latin Modern Sans";
+  src: url("#{$fonts}/lmsans10-bold.woff2") format("woff2");
+  font-style: normal; font-weight: 700; font-display: swap;
+}
+@font-face {
+  font-family: "Latin Modern Mono";
+  src: url("#{$fonts}/lmmono10-regular.woff2") format("woff2");
+  font-style: normal; font-weight: 400; font-display: swap;
+}
+
+/*
+  Dark is the default theme, so the dark palette lives on :root and the light
+  one is applied only when the visitor has explicitly chosen it. That way a
+  visitor with JavaScript disabled still gets a coherent dark page rather than
+  dark text on a white ground.
+*/
+
+:root {
+  color-scheme: dark;
+
+  --ink:         #ffe1c2;
+  --muted:       #b7aaa1;
+  --paper:       #121212;
+  --paper-deep:  #171522;
+  --card:        #181522;
+  --red:         #d21312;
+  --red-bright:  #ed4840;
+  --navy:        #ed8074;
+  --navy-soft:   #c15a52;
+  --amber:       #ffb43b;
+  --amber-pale:  #30213a;
+  --line:        #4c3b53;
+  --box:         #252858;
+  --box-ink:     #ffda4f;
+  --strong:      #ffda4f;
+  --table-head:  #30213a;
+  --table-even:  #211b2d;
+  --footer-bg:   #10101b;
+  --shadow:      0 16px 42px rgba(0, 0, 0, 0.34);
+
+  --serif: "Latin Modern Roman", "Noto Serif Bengali", Georgia, serif;
+  --sans:  "Latin Modern Sans", "Noto Serif Bengali", Arial, sans-serif;
+  --mono:  "Latin Modern Mono", monospace;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --ink:         #29231f;
+  --muted:       #665c52;
+  --paper:       #fff6d9;
+  --paper-deep:  #f5e9c7;
+  --card:        #fffaf0;
+  --red:         #b51212;
+  --red-bright:  #d21312;
+  --navy:        #28205b;
+  --navy-soft:   #45418b;
+  --amber:       #b58418;
+  --amber-pale:  #efe1bd;
+  --line:        #d7c69e;
+  --box:         #efe1bd;
+  --box-ink:     #28205b;
+  --strong:      #8b0f13;
+  --table-head:  #28205b;
+  --table-even:  #f5ecd5;
+  --footer-bg:   #f1e3bd;
+  --shadow:      0 16px 42px rgba(71, 46, 12, 0.14);
+}

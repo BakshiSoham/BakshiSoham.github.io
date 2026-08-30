@@ -2,77 +2,16 @@
 layout: default
 ---
 
-<blockquote><q> All models are approximations. Essentially, all models are wrong, but some are useful. </q>  - George E. P. Box</blockquote>
-<div class="row">
-    <div class="column left">
-        <div style="display: flex; flex-direction: column; align-items: center;">
-            <div>
-                <p>
-                    <div class="thumbnail-container">
-                        <a href="{{ site.github.url }}/assets/img/profile.jpg"><img src="{{ site.github.url }}/assets/img/profile.jpg"></a>
-                    </div>
-                </p>
-            </div>
-            <div style="display: inline-block; text-align: center;">
-                <h3><a href="{{ site.github.url }}/assets/file/cv.pdf" style="text-decoration:none;">Curriculum Vitae</a></h3>
-            </div>
-            <div style="display: inline-block; text-align: center;">
-                <h3><a href="https://scholar.google.com/citations?user=WuIfUrYAAAAJ&hl=en" style="text-decoration:none;">Google Scholar</a></h3>
-            </div>
-        </div>
+<div class="bio">
+  <div class="bio-portrait">
+    <img src="{{ site.github.url }}/assets/img/profile.jpg" alt="Soham Bakshi">
+    <div class="bio-links">
+      <a href="{{ site.github.url }}/assets/file/cv.pdf">Curriculum Vitae</a>
+      <a href="https://scholar.google.com/citations?user=WuIfUrYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
     </div>
-    <div class="column right">
-        <p>I am currently a Ph.D. candidate in Statistics in the <a href="https://lsa.umich.edu/stats">Department of Statistics</a> at the <a href="https://umich.edu/">University of Michigan</a>. Broadly, my research focuses on developing innovative statistical methodologies that enable meaningful inferential insights in today's data-driven science. I am advised by Professor <a href="https://snigdha-panigrahi.netlify.app/">Snigdha Panigrahi</a> and my current works are aimed at leveraging randomization to facilitate flexible and tractable inference for data-adaptive methods. </p> 
-        <p>I was born in Kolkata, Bengal and grew up in the hostel of <a href="https://rkmvp.org/">Ramakrishna Mission Vidyapith, Purulia</a>. Before joining UofM, I completed my Bachelor's in Mathematics (Hons) from <a href="https://www.isibang.ac.in/">Indian Statistical Institute</a> in Bangalore, India.</p> 
-        <p>If you're interested in discussions, research collaborations, or potential connections, don’t hesitate to contact me at <a href="mailto:bakso@umich.edu">bakso@umich.edu</a>. My name is Soham Bakshi, but everybody calls me Bakshi!</p> 
-    </div>
-</div>
-
-<!-- <ul class="posts-container">
-  {% for post in site.posts %}
-    {% unless post.next %}
-      <h3>{{ post.date | date: '%Y' }}</h3>
-    {% else %}
-      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-      {% if year != nyear %}
-        <h3>{{ post.date | date: '%Y' }}</h3>
-      {% endif %}
-    {% endunless %}
-    <li itemscope>
-      <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
-      <p class="post-date"><span><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date: "%B %-d" }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span></p>
-    </li>
-  {% endfor %}
-</ul>
-
-{% for post in paginator.posts %}
-  <div class="posts-container">
-    <h1>
-      <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
-    </h1>
-    {% if post.image %}
-      <div class="thumbnail-container">
-        <a href="{{ site.github.url }}{{ post.url }}"><img src="{{ site.github.url }}/assets/img/{{ post.image }}"></a>
-      </div>
-    {% endif %}
-    <p>
-      {{ post.content | strip_html | truncate: 350 }} <a href="{{ site.github.url }}{{ post.url }}">Read more</a>
-      <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date_to_string }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span>
-    </p>
   </div>
-{% endfor %}
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-button pagination-active next" href="{{ site.github.url }}{{ paginator.next_page_path }}">{{ site.data.settings.pagination.previous_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.previous_page }}</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">{{ site.data.settings.pagination.next_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.next_page }}</span>
-  {% endif %}
+  <div class="bio-text">
+    {{ content }}
+  </div>
 </div>
- -->

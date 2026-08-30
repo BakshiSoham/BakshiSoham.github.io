@@ -1,13 +1,26 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   {% include head.html %}
   <body>
-    <div class="container">
-      {% include header.html %}
-      <div class="content-container">
-        {{ content }}
-      </div>
-      {% include footer.html %}
-    </div>
+    <button id="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+      <span class="theme-icon" aria-hidden="true">&#9790;</span>
+    </button>
+
+    {% include header.html %}
+    <main class="page">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+
+    <script>
+      (() => {
+        const root = document.documentElement;
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+          const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+          root.dataset.theme = next;
+          localStorage.setItem('site-theme', next);
+        });
+      })();
+    </script>
   </body>
 </html>

@@ -1,0 +1,322 @@
+/*
+  Theme toggle
+*/
+
+#theme-toggle {
+  position: fixed;
+  z-index: 20;
+  top: 1rem;
+  right: 1rem;
+  width: 2.55rem;
+  height: 2.55rem;
+  padding: 0;
+  color: var(--amber);
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .16);
+}
+
+#theme-toggle:hover { color: var(--red-bright); }
+#theme-toggle .theme-icon { display: inline-block; transform: translateY(-0.02em); }
+
+/*
+  Masthead — the dark band carrying the site name and nav
+*/
+
+.masthead {
+  /*
+    The masthead stays dark in both themes — it is the site's identity band,
+    and the reference design treats it the same way. Its colours are therefore
+    deliberately fixed rather than themed: do not swap them for tokens, or the
+    light theme loses the contrast these values assume.
+  */
+  --masthead-ink:    #f0e7df;
+  --masthead-dim:    #d9d0c8;
+  --masthead-accent: #ffe2ad;
+  --masthead-rule:   rgba(255, 226, 173, 0.22);
+
+  color: var(--masthead-ink);
+  background: #10101b;
+  border-bottom: 5px solid #d21312;
+}
+
+.masthead-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 3.2rem 2.2rem 2rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
+  color: var(--masthead-accent);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 2.6rem;
+  height: 2px;
+  background: #ed4840;
+}
+
+.masthead .site-name {
+  display: block;
+  margin: 0;
+  color: #df6d68;
+  font-family: var(--serif);
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.masthead .site-name:hover { color: #ffb43b; }
+
+.subtitle {
+  max-width: 46rem;
+  margin: 1.2rem 0 0;
+  color: var(--masthead-dim);
+  font-family: var(--serif);
+  font-size: clamp(1.02rem, 2vw, 1.24rem);
+  line-height: 1.45;
+}
+
+/*
+  Navigation
+*/
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem 1.4rem;
+  margin-top: 2.2rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--masthead-rule);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+
+.nav-links a {
+  color: var(--masthead-ink);
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] { color: #ffb43b; }
+
+.nav-social {
+  display: flex;
+  gap: 0.9rem;
+  font-size: 1rem;
+}
+
+.nav-social a {
+  color: #bcb2aa;
+  transition: color .35s;
+}
+
+.nav-social a:hover { color: #ed4840; }
+
+/*
+  Page body
+*/
+
+.page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 3rem 2.2rem 5rem;
+}
+
+.page > h1:first-child {
+  margin: 0 0 2rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+
+article h1 {
+  margin: 3.4rem 0 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line);
+}
+
+article h1:first-of-type {
+  margin-top: 0.4rem;
+  padding-top: 0;
+  border-top: 0;
+}
+
+article h2 { margin: 2.2rem 0 0.6rem; }
+
+/*
+  Home
+*/
+
+.bio {
+  display: grid;
+  grid-template-columns: minmax(190px, 240px) minmax(0, 1fr);
+  gap: 2.8rem;
+  align-items: start;
+}
+
+.bio-portrait img {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
+
+.bio-links {
+  margin-top: 1.4rem;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  line-height: 1.9;
+}
+
+.bio-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.bio-links a::before {
+  content: "";
+  flex: none;
+  width: 0.46rem;
+  height: 0.46rem;
+  background: var(--amber);
+  border-radius: 50%;
+}
+
+.bio-text p:first-child { margin-top: 0; }
+
+@media (max-width: 768px) {
+  .bio { grid-template-columns: 1fr; gap: 1.8rem; }
+  .bio-portrait { max-width: 240px; }
+}
+
+/*
+  Cards — publications, talks, courses. Applied to the ordered lists that
+  kramdown generates on pages with `cards: true` in their front matter.
+*/
+
+.cards-page ol {
+  margin: 0 0 2.5rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: card;
+}
+
+.cards-page ol > li {
+  position: relative;
+  margin-bottom: 0.9rem;
+  padding: 1rem 1.35rem 1rem 3.2rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.cards-page ol > li::before {
+  counter-increment: card;
+  content: counter(card);
+  position: absolute;
+  top: 0.95rem;
+  left: 1.25rem;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.cards-page ol > li p:first-child strong,
+.cards-page ol > li > strong {
+  color: var(--strong);
+  font-size: 1.03rem;
+}
+
+.cards-page ol em { color: var(--muted); font-style: italic; }
+
+.cards-page ol > li p { margin: 0.15rem 0; }
+
+/*
+  Posts
+*/
+
+.post-list {
+  margin: 0 0 3rem;
+  padding: 0;
+  list-style: none;
+}
+
+.post-list li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.post-list a { text-decoration: none; }
+
+.post-date {
+  display: block;
+  margin: 0.4rem 0 1.5rem;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+}
+
+.post-excerpt {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.post-excerpt h2 { margin-top: 0; }
+
+/*
+  Footer
+*/
+
+.footer {
+  padding: 2rem 2.2rem;
+  color: var(--muted);
+  background: var(--footer-bg);
+  border-top: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.1rem;
+  margin-bottom: 0.9rem;
+  font-size: 1.05rem;
+}
+
+.footer-social a {
+  color: var(--muted);
+  transition: color .35s;
+}
+
+.footer-social a:hover { color: var(--red-bright); }

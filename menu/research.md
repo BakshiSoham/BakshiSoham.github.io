@@ -1,5 +1,6 @@
 ---
 layout: page
+cards: true
 title: Research
 permalink: /research
 ---

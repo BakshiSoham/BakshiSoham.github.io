@@ -1,38 +1,20 @@
-# Site Build Settings
-
-# Jekyll-paginate-v2 configuration
-#  pagination:
-#   enabled: true
-#   per_page: 5
-#   permalink: '/page/:num/'
-#   title: ':title - page :num of :max'
-#   limit: 0
-#   sort_field: 'date'
-#   sort_reverse: true
+# Site
+title:        'Soham Bakshi'
+description:  'Ph.D. candidate in Statistics at the University of Michigan.'
+author:       'Soham Bakshi'
 
 baseurl: ""
 url: "https://bakshisoham.github.io"
 
-# The Lagrange templates reference {{ site.github.url }}, which is normally
-# injected by jekyll-github-metadata on GitHub's legacy builder. This site is
-# built by GitHub Actions with its own Gemfile, so define it explicitly.
+# The layouts reference {{ site.github.url }}, which is normally injected by
+# jekyll-github-metadata on GitHub's legacy builder. This site is built by
+# GitHub Actions with its own Gemfile, so define it explicitly. The local
+# preview overrides it via _config.local.yml.
 github:
   url: "https://bakshisoham.github.io"
 
-# jekyll-paginate configuration
-paginate:            5
-
-# Build settings
-markdown:            kramdown
-highlighter:         rouge
-permalink:           /:title
-plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
-
-# Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title:		           'Soham Bakshi'
-description:	       ''
-author:              'Soham Bakshi'
-
-# RSS 2.0 can be used instead of Atom by uncommenting following two lines
-#feed:
-#  path: rss-feed.xml
+# Build
+markdown:     kramdown
+highlighter:  rouge
+permalink:    /:title
+plugins:      [jekyll-sitemap, jekyll-feed, jekyll-seo-tag]

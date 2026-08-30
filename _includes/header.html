@@ -1,9 +1,20 @@
-<header class="header">
-  <h3 class="header-title">
-    <a href="{{ site.github.url }}/">{{ site.title }}</a>
-    
-    <a href="#" class="btn btn-sm" id="toggle" style="margin-left: 30px;"><i class="fa fa-solid fa-moon fa-sm" aria-hidden="true"></i></a>
-    <small class="header-subtitle">{{ site.description }}</small>
-    {% include menu.html %}
-  </h3>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Ph.D. Candidate &middot; Statistics &middot; University of Michigan</p>
+    <a class="site-name" href="{{ site.github.url }}/">{{ site.title }}</a>
+    {%- if page.url == "/" %}
+      <p class="subtitle">All models are approximations. Essentially, all models are wrong, but some are useful. &mdash; George E. P. Box</p>
+    {%- endif %}
+
+    <nav class="nav">
+      <div class="nav-links">
+        {%- for item in site.data.settings.menu -%}
+          {%- assign target = item.url | replace: '/', '' -%}
+          {%- assign here = page.url | replace: '/', '' -%}
+          <a href="{{ site.github.url }}{{ item.url }}"{% if target == here %} aria-current="page"{% endif %}>{{ item.name }}</a>
+        {%- endfor -%}
+      </div>
+      <div class="nav-social">{% include social-icons.html %}</div>
+    </nav>
+  </div>
 </header>
