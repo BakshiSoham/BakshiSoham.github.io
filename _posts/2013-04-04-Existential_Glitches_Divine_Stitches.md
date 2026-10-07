@@ -4,7 +4,7 @@ title: "Existential Glitches & Divine Stitches"
 author: "Soham Bakshi"
 categories: journal
 tags: [documentation,sample]
-image: glitches.png
+image: glitches.jpg
 ---
 
 Coming soon!

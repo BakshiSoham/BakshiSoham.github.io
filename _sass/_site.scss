@@ -310,6 +310,133 @@ article h2 { margin: 2.2rem 0 0.6rem; }
 .cards-page ol.refs p { display: inline; margin: 0; }
 
 /*
+  Publications — extras on the reference list rendered from
+  _data/publications.yml: status line, link row, and a BibTeX disclosure.
+*/
+
+.cards-page ol.refs .pub-status {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.pub-links a,
+.bibtex summary {
+  margin-right: 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.pub-links:empty { display: none; }
+
+.bibtex {
+  display: inline;
+  text-indent: 0;
+}
+
+.bibtex summary {
+  display: inline;
+  color: var(--red-bright);
+  cursor: pointer;
+  list-style: none;
+}
+
+.bibtex summary::-webkit-details-marker { display: none; }
+.bibtex summary::after { content: " \25B8"; }
+.bibtex[open] summary::after { content: " \25BE"; }
+.bibtex summary:hover { color: var(--amber); }
+
+.bibtex[open] {
+  display: block;
+  position: relative;
+  margin-top: 0.4rem;
+}
+
+.bibtex pre {
+  margin: 0.4rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  white-space: pre;
+}
+
+.copy-bib {
+  display: none;
+  position: absolute;
+  top: 2.1rem;
+  right: 0.5rem;
+  padding: 0.15rem 0.6rem;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.bibtex[open] .copy-bib { display: block; }
+.copy-bib:hover { color: var(--amber); }
+
+.bib-all {
+  margin: -1.2rem 0 2.5rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+
+.bib-all a { text-decoration: none; }
+
+/*
+  Research notes
+*/
+
+.note-list {
+  margin: 2rem 0 3rem;
+  padding: 0;
+  list-style: none;
+}
+
+.note-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.note-list .post-date { margin: 0 0 0.2rem; }
+.note-list > li > a { font-size: 1.15rem; text-decoration: none; }
+.note-list p { margin: 0.3rem 0 0; color: var(--muted); }
+
+.note-kicker {
+  margin: 0 0 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.note-kicker a { text-decoration: none; }
+
+.page > .note-kicker + h1 {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.note-abstract {
+  margin: 0 0 2rem;
+  padding-left: 1rem;
+  color: var(--muted);
+  border-left: 3px solid var(--amber);
+  font-style: italic;
+}
+
+.note h2 { margin-top: 2.4rem; }
+.note table {
+  display: block;
+  overflow-x: auto;
+  font-size: 0.88rem;
+}
+.note mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; }
+
+/*
   Posts
 */
 

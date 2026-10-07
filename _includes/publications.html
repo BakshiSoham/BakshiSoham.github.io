@@ -1,0 +1,51 @@
+{%- comment -%}
+  The reference list on /research, rendered from _data/publications.yml in the
+  author-year form a BibTeX style such as plainnat produces: initials before
+  surnames, venue in italics, arXiv identifier for preprints.
+{%- endcomment -%}
+<ol class="refs pubs">
+  {%- for p in site.data.publications %}
+  <li id="{{ p.key }}">
+    {%- for a in p.authors -%}
+      {%- capture name -%}{% assign parts = a.first | split: " " %}{% for part in parts %}{{ part | slice: 0 }}.{% unless forloop.last %} {% endunless %}{% endfor %} {{ a.last }}{%- endcapture -%}
+      {%- if a.last == "Bakshi" -%}<strong>{{ name }}</strong>{%- else -%}{{ name }}{%- endif -%}
+      {%- if forloop.rindex == 2 -%}{% if forloop.length > 2 %},{% endif %} and {% elsif forloop.last == false %}, {% endif -%}
+    {%- endfor %}.
+    {{ p.title }}.
+    {%- if p.journal %} <em>{{ p.journal }}</em>, {{ p.volume }}{% if p.pages %}:{{ p.pages | replace: "--", "&ndash;" }}{% endif %}, {{ p.year }}.
+    {%- elsif p.booktitle %} In <em>{{ p.booktitle }}</em>, {{ p.year }}.
+    {%- elsif p.arxiv %} <em>arXiv preprint</em> <a href="https://arxiv.org/abs/{{ p.arxiv }}">arXiv:{{ p.arxiv }}</a>, {{ p.year }}.
+    {%- else %} {{ p.year }}.
+    {%- endif %}
+    {%- if p.status %}
+    <span class="pub-status">{{ p.status }}.</span>
+    {%- endif %}
+    <span class="pub-links">
+      {%- if p.doi %}<a href="https://doi.org/{{ p.doi }}">DOI</a>{% endif -%}
+      {%- for l in p.links -%}
+        {%- assign first_char = l.url | slice: 0 -%}
+        <a href="{% if first_char == '/' %}{{ site.github.url }}{% endif %}{{ l.url }}">{{ l.label }}</a>
+      {%- endfor -%}
+    </span>
+    <details class="bibtex">
+      <summary>BibTeX</summary>
+      <button type="button" class="copy-bib">Copy</button>
+      <pre><code>{% capture bib %}{% include bibtex.html pub=p %}{% endcapture %}{{ bib | strip | escape }}</code></pre>
+    </details>
+  </li>
+  {%- endfor %}
+</ol>
+
+<p class="bib-all"><a href="{{ site.github.url }}/publications.bib" download><i class="fa-solid fa-download" aria-hidden="true"></i> All entries as BibTeX</a></p>
+
+<script>
+  document.querySelectorAll('.copy-bib').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const text = btn.parentElement.querySelector('code').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+      });
+    });
+  });
+</script>

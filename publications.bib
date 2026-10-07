@@ -1,0 +1,9 @@
+---
+layout: null
+permalink: /publications.bib
+---
+% Publications of Soham Bakshi -- {{ site.url }}/research
+
+{% for p in site.data.publications -%}
+{% include bibtex.html pub=p %}
+{% endfor -%}

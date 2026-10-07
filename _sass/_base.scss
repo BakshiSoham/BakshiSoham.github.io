@@ -27,6 +27,13 @@ body {
   user-select: none;
 }
 
+/* ...except where copying is the point: code and BibTeX blocks. */
+pre, pre *, code {
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
 a {
   color: var(--red-bright);
   text-decoration-thickness: 1px;

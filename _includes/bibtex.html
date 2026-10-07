@@ -1,0 +1,39 @@
+{%- comment -%}
+  Renders one entry of _data/publications.yml as BibTeX. Used both inside the
+  research page's <details> blocks and by /publications.bib, so keep the output
+  plain text (callers escape it for HTML when they need to).
+{%- endcomment -%}
+{%- assign p = include.pub -%}
+{%- capture authors -%}{% for a in p.authors %}{{ a.last }}, {{ a.first }}{% unless forloop.last %} and {% endunless %}{% endfor %}{%- endcapture -%}
+@{{ p.type }}{ {{- p.key }},
+  author        = { {{- authors -}} },
+  title         = {{ "{{" }}{{ p.title }}}},
+{%- if p.journal %}
+  journal       = { {{- p.journal -}} },
+{%- endif %}
+{%- if p.booktitle %}
+  booktitle     = { {{- p.booktitle -}} },
+{%- endif %}
+{%- if p.volume %}
+  volume        = { {{- p.volume -}} },
+{%- endif %}
+{%- if p.pages %}
+  pages         = { {{- p.pages -}} },
+{%- endif %}
+  year          = { {{- p.year -}} },
+{%- if p.arxiv %}
+  eprint        = { {{- p.arxiv -}} },
+  archivePrefix = {arXiv},
+{%- endif %}
+{%- if p.doi %}
+  doi           = { {{- p.doi -}} },
+{%- endif %}
+{%- if p.url %}
+  url           = { {{- p.url -}} },
+{%- elsif p.arxiv %}
+  url           = {https://arxiv.org/abs/{{ p.arxiv }}},
+{%- endif %}
+{%- if p.status %}
+  note          = { {{- p.status -}} },
+{%- endif %}
+}

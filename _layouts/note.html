@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<p class="note-kicker"><a href="{{ site.github.url }}/notes">Research notes</a></p>
+<h1>{{ page.title }}</h1>
+<p class="post-date">
+  {{ page.date | date: "%B %-d, %Y" }}
+  {%- if page.last_modified_at %} &middot; updated {{ page.last_modified_at | date: "%B %-d, %Y" }}{% endif %}
+  {%- if page.tags.size > 0 %} &middot; {{ page.tags | join: ", " }}{% endif %}
+</p>
+{%- if page.description %}
+<p class="note-abstract">{{ page.description }}</p>
+{%- endif %}
+<article class="note">
+  {{ content }}
+</article>

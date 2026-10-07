@@ -1,0 +1,108 @@
+# Publications and preprints, newest first. This file is the single source for
+# both the reference list on /research and the downloadable /publications.bib,
+# so edit entries here rather than on the page.
+#
+# Fields
+#   key        BibTeX citation key
+#   type       BibTeX entry type: article | inproceedings | misc
+#   authors    in order; `first` may be a full given name or initials ("L.")
+#   journal    article only; booktitle for inproceedings
+#   arxiv      arXiv identifier, without the "arXiv:" prefix
+#   status     shown under the entry and written to the BibTeX `note` field
+#   links      extra links shown after the entry (code, slides, ...)
+
+- key: bakshi2026winners
+  type: misc
+  title: "Flexible Inference for Winners with Conditional Validity"
+  authors:
+    - {last: Bakshi, first: Soham}
+    - {last: Gao, first: L.}
+    - {last: Gao, first: Z.}
+    - {last: Panigrahi, first: Snigdha}
+  year: 2026
+  arxiv: "2607.18545"
+  status: "Under review, Journal of the Royal Statistical Society: Series B"
+
+- key: bakshi2026collapse
+  type: misc
+  title: "From Collapse to Improvement: Statistical Perspectives on the Evolutionary Dynamics of Iterative Training on Contaminated Sources"
+  authors:
+    - {last: Bakshi, first: Soham}
+    - {last: Chakraborty, first: S.}
+  year: 2026
+  arxiv: "2602.10531"
+  status: "Under review, NeurIPS 2026"
+  links:
+    - {label: Code, url: "https://github.com/BakshiSoham/LLMCollapse"}
+
+- key: bakshi2025classification
+  type: misc
+  title: "Classification Trees with Valid Inference via the Exponential Mechanism"
+  authors:
+    - {last: Bakshi, first: Soham}
+    - {last: Panigrahi, first: Snigdha}
+  year: 2025
+  arxiv: "2511.15068"
+  status: "Under review, Bernoulli"
+
+- key: bakshi2024trees
+  type: misc
+  title: "Inference with Randomized Regression Trees"
+  authors:
+    - {last: Bakshi, first: Soham}
+    - {last: Huang, first: Y.}
+    - {last: Panigrahi, first: Snigdha}
+    - {last: Dempsey, first: Walter}
+  year: 2024
+  arxiv: "2412.20535"
+  status: "Under revision, Biometrics"
+  links:
+    - {label: Code, url: "https://github.com/BakshiSoham/SI-CART"}
+    - {label: Slides, url: "/assets/file/SIRTreesJSM26.pdf"}
+
+- key: bakshi2024moderation
+  type: misc
+  title: "Selective Inference for Time-Varying Effect Moderation"
+  authors:
+    - {last: Bakshi, first: Soham}
+    - {last: Dempsey, first: Walter}
+    - {last: Panigrahi, first: Snigdha}
+  year: 2024
+  arxiv: "2411.15908"
+  status: "Second-round revision, Journal of the American Statistical Association"
+  links:
+    - {label: Slides, url: "/assets/file/SIMRTSlides.pdf"}
+
+- key: bakshi2023bayes
+  type: inproceedings
+  title: "Bayes Classifier Cannot Be Learned from Noisy Responses with Unknown Noise Rates"
+  authors:
+    - {last: Bakshi, first: Soham}
+    - {last: Maity, first: Subha}
+  year: 2023
+  booktitle: "International Conference on Learning Representations (ICLR), Tiny Papers Track"
+  url: "https://openreview.net/forum?id=U4o5iSWSaD"
+  links:
+    - {label: OpenReview, url: "https://openreview.net/forum?id=U4o5iSWSaD"}
+    - {label: Slides, url: "/assets/file/slides_jsm.pdf"}
+
+- key: bhattacharyya2022irrational
+  type: misc
+  title: "How to Approximate Irrational Numbers Nicely?"
+  authors:
+    - {last: Bhattacharyya, first: Tirthankar}
+    - {last: Bakshi, first: Soham}
+    - {last: Das, first: Arka}
+  year: 2022
+  arxiv: "2206.12579"
+
+- key: bakshi2022continuity
+  type: article
+  title: "On the Set of Points of Continuity and Maximally Discontinuous Extensions"
+  authors:
+    - {last: Bakshi, first: Soham}
+  year: 2022
+  journal: Resonance
+  volume: 27
+  pages: "131--142"
+  doi: "10.1007/s12045-022-1298-1"

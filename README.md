@@ -7,12 +7,17 @@ site built and deployed by GitHub Actions (`.github/workflows/pages.yml`).
 
 | Content | File |
 |---|---|
-| Papers, preprints, talks | `menu/research.md` |
+| Publications (list + `/publications.bib`) | `_data/publications.yml` |
+| Research statement, talks, awards | `menu/research.md` |
+| Research notes | `_notes/YYYY-MM-DD-slug.md` (listed at `/notes`) |
 | Courses taught | `menu/teaching.md` |
 | Blog posts (হ য ব র ল) | `_posts/YYYY-MM-DD-Title.md` |
 | Menu items, social links | `_data/settings.yml` |
 | Slides, CV, other PDFs | `assets/file/` |
 | Latin Modern webfonts | `assets/fonts/` |
+
+A research note needs only `title`, and optionally `description` and `tags`, in
+its front matter; maths goes between `$$ ... $$` (inline or display).
 
 ## Preview locally
 

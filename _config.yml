@@ -18,3 +18,16 @@ markdown:     kramdown
 highlighter:  rouge
 permalink:    /:title
 plugins:      [jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
+
+# Research notes live in _notes/ as YYYY-MM-DD-slug.md and are listed at /notes.
+collections:
+  notes:
+    output: true
+    permalink: /notes/:title
+
+defaults:
+  - scope: {type: notes}
+    values: {layout: note}
+
+# Repo files that are not part of the site.
+exclude: [README.md, Gemfile, Gemfile.lock, vendor, .bundle]
