@@ -30,4 +30,4 @@ defaults:
     values: {layout: note}
 
 # Repo files that are not part of the site.
-exclude: [README.md, Gemfile, Gemfile.lock, vendor, .bundle]
+exclude: [README.md, Gemfile, Gemfile.lock, vendor, .bundle, .claude]
