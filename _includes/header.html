@@ -1,3 +1,15 @@
+{%- comment -%}
+  A section is current when the page is its landing page, one of its
+  children, or anything below a child (a notebook entry under /research).
+{%- endcomment -%}
+{%- assign current_section = nil -%}
+{%- for item in site.data.settings.menu -%}
+  {%- if page.url == item.url -%}{%- assign current_section = item -%}{%- endif -%}
+  {%- for child in item.children -%}
+    {%- assign child_prefix = child.url | append: '/' -%}
+    {%- if page.url == child.url or page.url contains child_prefix -%}{%- assign current_section = item -%}{%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
 <header class="masthead">
   <div class="masthead-inner">
     <p class="eyebrow">Ph.D. Candidate &middot; Statistics &middot; University of Michigan</p>
@@ -6,15 +18,25 @@
       <p class="subtitle">All models are approximations. Essentially, all models are wrong, but some are useful. &mdash; George E. P. Box</p>
     {%- endif %}
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Main">
       <div class="nav-links">
         {%- for item in site.data.settings.menu -%}
-          {%- assign target = item.url | replace: '/', '' -%}
-          {%- assign here = page.url | replace: '/', '' -%}
-          <a href="{{ site.github.url }}{{ item.url }}"{% if target == here %} aria-current="page"{% endif %}>{{ item.name }}</a>
+          <a href="{{ site.github.url }}{{ item.url }}"
+             {%- if current_section and current_section.url == item.url %} aria-current="{% if page.url == item.url %}page{% else %}true{% endif %}"{% endif %}
+             {%- if item.gloss %} title="{{ item.gloss }}" lang="bn"{% endif %}>{{ item.name }}</a>
         {%- endfor -%}
       </div>
       <div class="nav-social">{% include social-icons.html %}</div>
     </nav>
+
+    {%- if current_section.children %}
+    <nav class="subnav" aria-label="{{ current_section.gloss }}">
+      {%- for child in current_section.children -%}
+        {%- assign child_prefix = child.url | append: '/' -%}
+        <a href="{{ site.github.url }}{{ child.url }}"
+           {%- if page.url == child.url %} aria-current="page"{% elsif page.url contains child_prefix %} aria-current="true"{% endif %}>{{ child.name }}</a>
+      {%- endfor -%}
+    </nav>
+    {%- endif %}
   </div>
 </header>

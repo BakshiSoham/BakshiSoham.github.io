@@ -19,7 +19,7 @@ I develop **inference-aware adaptive algorithms**: data-driven procedures whose 
 
 5. **Reliability of learning systems.** What a learning pipeline must preserve to remain identifiable: classification under unknown label noise, and models retrained on contaminated or self-generated data.
 
-# Research Notes
+# Notebook
 
 {% assign recent_notes = site.notes | sort: "date" | reverse %}
 <ul class="note-list note-list-compact">
@@ -30,7 +30,7 @@ I develop **inference-aware adaptive algorithms**: data-driven procedures whose 
   </li>
   {%- endfor %}
 </ul>
-<p class="see-all"><a href="{{ site.github.url }}/research/notes">All research notes &rarr;</a></p>
+<p class="see-all"><a href="{{ site.github.url }}/research/notebook">The whole notebook &rarr;</a></p>
 
 # Publications & Preprints
 

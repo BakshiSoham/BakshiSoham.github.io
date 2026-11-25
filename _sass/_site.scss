@@ -138,6 +138,34 @@
 
 .nav-social a:hover { color: #ed4840; }
 
+/* Second row: the pages inside the current section. */
+.subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.3rem;
+  margin-top: 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+}
+
+.subnav a {
+  color: var(--masthead-dim);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.subnav a:hover { color: #ffb43b; }
+.subnav a[aria-current] { color: var(--masthead-ink); border-bottom-color: #ed4840; }
+
+.nav-links a[aria-current="true"] { color: #ffb43b; }
+
+/* On phones the header icons would sit between the two link rows; the footer
+   carries the same icons, so drop them here. */
+@media (max-width: 600px) {
+  .nav-social { display: none; }
+}
+
 /*
   Page body
 */
@@ -561,6 +589,38 @@ a.writing-title { text-decoration: none; }
 }
 
 .post-excerpt h2 { margin-top: 0; }
+
+/*
+  Section landing pages (কাজের কাজ, অকাজের কাজ)
+*/
+
+.section-gloss {
+  margin-left: 0.4rem;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.section-intro { margin: 0 0 1.8rem; color: var(--muted); }
+
+.section-list {
+  display: grid;
+  margin: 0 0 3rem;
+  padding: 0;
+  list-style: none;
+}
+
+.section-list li {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-list li:last-child { border-bottom: 1px solid var(--line); }
+.section-list a { font-size: 1.3rem; text-decoration: none; }
+.section-list p { margin: 0.25rem 0 0; color: var(--muted); }
 
 /*
   Footer

@@ -1,12 +1,23 @@
 # Address used for "write to read" requests on the হ য ব র ল page.
 contact_email: 'bakso@umich.edu'
 
+# Top menu. A section with `children` gets its own landing page (`url`) and a
+# second row of links shown on every page inside it.
 menu:
-- {name: 'Home',        url: '/'}
-- {name: 'Research',    url: '/research'}
-- {name: 'Teaching',    url: '/teaching'}
-- {name: 'হ য ব র ল',   url: '/writing'}
-- {name: 'Quotes',      url: '/quotes'}
+- name: 'Home'
+  url: '/'
+- name: 'কাজের কাজ'
+  gloss: 'Work'
+  url: '/work'
+  children:
+  - {name: 'Research',               url: '/research'}
+  - {name: 'Teaching & Mentorship',  url: '/teaching'}
+- name: 'অকাজের কাজ'
+  gloss: 'Not work'
+  url: '/off-work'
+  children:
+  - {name: 'Quotes',                 url: '/quotes'}
+  - {name: 'হ য ব র ল',              url: '/writing'}
 
 # Icons are Font Awesome 6 classes. Links beginning with '/' are treated as
 # internal and get site.baseurl prepended; everything else opens in a new tab.

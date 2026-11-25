@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+{%- assign section = site.data.settings.menu | where: "url", page.url | first %}
+<h1 lang="bn">{{ section.name }} <span class="section-gloss" lang="en">{{ section.gloss }}</span></h1>
+
+{{ content }}
+
+<ul class="section-list">
+  {%- for child in section.children %}
+  {%- assign blurb = page.blurbs[child.url] %}
+  <li>
+    <a href="{{ site.github.url }}{{ child.url }}">{{ child.name }}</a>
+    {%- if blurb %}<p>{{ blurb }}</p>{% endif %}
+  </li>
+  {%- endfor %}
+</ul>

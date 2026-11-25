@@ -1,7 +1,7 @@
 ---
 layout: page
 cards: true
-title: Teaching
+title: Teaching & Mentorship
 permalink: /teaching
 ---
 
@@ -25,3 +25,13 @@ I led laboratory sections and office hours, and designed and graded assignments.
 
 4. Mentor, Undergraduate Directed Group Reading Program for Bachelor of Mathematics students, Indian Statistical Institute, 2019–2022.
 {: .refs}
+
+<!--
+  Resources: add a section here for handouts, reading lists or useful links,
+  for example:
+
+  # Resources
+
+  1. [Title](link) — one line on what it is.
+  {: .refs}
+-->

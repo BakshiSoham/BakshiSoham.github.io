@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark light">
+  <meta name="color-scheme" content="light dark">
 
   <title>
     {%- if page.url == "/" -%}
@@ -13,13 +13,13 @@
 
   {%- comment -%}
     Resolve the theme before first paint so there is no flash of the wrong
-    ground. Dark is the default: prefers-color-scheme is deliberately not
-    consulted, so a visitor with nothing stored always gets dark. This script
+    ground. Light is the default: prefers-color-scheme is deliberately not
+    consulted, so a visitor with nothing stored always gets light. This script
     must stay blocking and stay ahead of the stylesheet.
   {%- endcomment -%}
   <script>
     document.documentElement.dataset.theme =
-      localStorage.getItem('site-theme') || 'dark';
+      localStorage.getItem('site-theme') || 'light';
   </script>
 
   <link rel="stylesheet" href="{{ site.github.url }}/assets/css/main.css">
