@@ -1,9 +1,12 @@
+# Address used for "write to read" requests on the হ য ব র ল page.
+contact_email: 'bakso@umich.edu'
+
 menu:
 - {name: 'Home',        url: '/'}
 - {name: 'Research',    url: '/research'}
-- {name: 'Notes',       url: '/notes'}
 - {name: 'Teaching',    url: '/teaching'}
 - {name: 'হ য ব র ল',   url: '/writing'}
+- {name: 'Quotes',      url: '/quotes'}
 
 # Icons are Font Awesome 6 classes. Links beginning with '/' are treated as
 # internal and get site.baseurl prepended; everything else opens in a new tab.

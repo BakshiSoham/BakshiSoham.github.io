@@ -1,0 +1,19 @@
+# Quotes shown on /quotes, in the order listed here.
+#
+# Fields
+#   text     the quote; use a YAML block (`text: >`) for long ones
+#   author   name as it should appear
+#   born     year, e.g. 1919; use "551 BC" style for BC dates
+#   died     year; leave out for someone living
+#   note     optional: the source work, occasion, or where you learned it
+#
+# Example of a living person, with a note:
+# - text: "..."
+#   author: "Someone"
+#   born: 1950
+#   note: "in a lecture at ISI Bangalore"
+
+- text: "All models are approximations. Essentially, all models are wrong, but some are useful."
+  author: "George E. P. Box"
+  born: 1919
+  died: 2013

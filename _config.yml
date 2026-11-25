@@ -19,11 +19,16 @@ highlighter:  rouge
 permalink:    /:title
 plugins:      [jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
-# Research notes live in _notes/ as YYYY-MM-DD-slug.md and are listed at /notes.
+# Research notes live in _notes/ as YYYY-MM-DD-slug.md and are listed at
+# /research/notes. On-request writing lives in _writing/: only its front matter
+# (title, date, optional teaser) is used, and no page is generated for it, so
+# the full text never belongs in the repository.
 collections:
   notes:
     output: true
-    permalink: /notes/:title
+    permalink: /research/notes/:title
+  writing:
+    output: false
 
 defaults:
   - scope: {type: notes}

@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Notes
-permalink: /notes
+permalink: /research/notes
 ---
 
+<p class="note-kicker"><a href="{{ site.github.url }}/research">Research</a></p>
 <h1>Research Notes</h1>
 
 <p>Working notes on the problems behind my papers: definitions, short derivations,

@@ -9,9 +9,11 @@ site built and deployed by GitHub Actions (`.github/workflows/pages.yml`).
 |---|---|
 | Publications (list + `/publications.bib`) | `_data/publications.yml` |
 | Research statement, talks, awards | `menu/research.md` |
-| Research notes | `_notes/YYYY-MM-DD-slug.md` (listed at `/notes`) |
+| Research notes | `_notes/YYYY-MM-DD-slug.md` (listed at `/research/notes`) |
+| হ য ব র ল, on request | `_writing/YYYY-MM-DD-slug.md`, front matter only |
+| হ য ব র ল, open | `_posts/YYYY-MM-DD-Title.md` |
+| Quotes | `_data/quotes.yml` |
 | Courses taught | `menu/teaching.md` |
-| Blog posts (হ য ব র ল) | `_posts/YYYY-MM-DD-Title.md` |
 | Menu items, social links | `_data/settings.yml` |
 | Slides, CV, other PDFs | `assets/file/` |
 | Latin Modern webfonts | `assets/fonts/` |

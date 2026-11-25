@@ -12,19 +12,34 @@ layout: default
   yet never assume it is one of your rights</p>
 </blockquote>
 
-<ul class="post-list">
-  {%- for post in site.posts %}
-    <li><a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a></li>
+{%- comment -%}
+  Open posts come from _posts/ and link to their own page. On-request pieces
+  come from the `writing` collection, which generates no pages: only the
+  title, date and optional teaser are published, with a link to ask for the
+  full text by email.
+{%- endcomment -%}
+{%- assign entries = site.posts | concat: site.writing | sort: "date" | reverse %}
+{%- assign contact = site.data.settings.contact_email %}
+
+<p class="writing-note">Pieces here are shared on request. Write to me at
+<a href="mailto:{{ contact }}">{{ contact }}</a> and I'll send the one you'd like to read.</p>
+
+<ul class="writing-list">
+  {%- for entry in entries %}
+  <li>
+    <span class="post-date">{{ entry.date | date: "%b %Y" }}</span>
+    <div class="writing-entry">
+      {%- if entry.collection == "writing" %}
+      <span class="writing-title">{{ entry.title }}</span>
+      <span class="writing-tag">on request</span>
+      {%- if entry.teaser %}
+      <p class="writing-teaser">{{ entry.teaser }}</p>
+      {%- endif %}
+      <a class="writing-ask" href="mailto:{{ contact }}?subject={{ 'Request to read: ' | append: entry.title | uri_escape }}">Write to read &rarr;</a>
+      {%- else %}
+      <a class="writing-title" href="{{ site.github.url }}{{ entry.url }}">{{ entry.title }}</a>
+      {%- endif %}
+    </div>
+  </li>
   {%- endfor %}
 </ul>
-
-{%- for post in site.posts %}
-  <div class="post-excerpt">
-    <h2><a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a></h2>
-    {%- if post.image %}
-      <a href="{{ site.github.url }}{{ post.url }}"><img src="{{ site.github.url }}/assets/img/{{ post.image }}" alt=""></a>
-    {%- endif %}
-    <p>{{ post.content | strip_html | truncate: 300 }}
-      <a href="{{ site.github.url }}{{ post.url }}">Read more</a></p>
-  </div>
-{%- endfor %}
