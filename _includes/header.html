@@ -23,14 +23,15 @@
         {%- for item in site.data.settings.menu -%}
           <a href="{{ site.github.url }}{{ item.url }}"
              {%- if current_section and current_section.url == item.url %} aria-current="{% if page.url == item.url %}page{% else %}true{% endif %}"{% endif %}
-             {%- if item.gloss %} title="{{ item.gloss }}" lang="bn"{% endif %}>{{ item.name }}</a>
+             {%- if item.gloss %} title="{{ item.gloss }}"{% endif %}>{{ item.name }}
+             {%- if item.bn %} <span class="nav-bn" lang="bn">({{ item.bn }})</span>{% endif %}</a>
         {%- endfor -%}
       </div>
       <div class="nav-social">{% include social-icons.html %}</div>
     </nav>
 
     {%- if current_section.children %}
-    <nav class="subnav" aria-label="{{ current_section.gloss }}">
+    <nav class="subnav" aria-label="{{ current_section.name }}">
       {%- for child in current_section.children -%}
         {%- assign child_prefix = child.url | append: '/' -%}
         <a href="{{ site.github.url }}{{ child.url }}"

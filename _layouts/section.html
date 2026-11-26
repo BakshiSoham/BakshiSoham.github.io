@@ -3,7 +3,9 @@ layout: default
 ---
 
 {%- assign section = site.data.settings.menu | where: "url", page.url | first %}
-<h1 lang="bn">{{ section.name }} <span class="section-gloss" lang="en">{{ section.gloss }}</span></h1>
+<h1>{{ section.name }}
+  {%- if section.bn %} <span class="section-bn" lang="bn">{{ section.bn }}</span>{% endif %}
+  {%- if section.gloss %} <span class="section-gloss">{{ section.gloss }}</span>{% endif %}</h1>
 
 {{ content }}
 

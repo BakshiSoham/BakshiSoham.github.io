@@ -1,6 +1,6 @@
 ---
 layout: section
-title: কাজের কাজ
+title: Work
 permalink: /work
 blurbs:
   /research: "Publications and preprints, talks, software, and the notebook of research posts."

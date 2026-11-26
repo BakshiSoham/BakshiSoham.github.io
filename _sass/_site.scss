@@ -159,6 +159,8 @@
 .subnav a[aria-current] { color: var(--masthead-ink); border-bottom-color: #ed4840; }
 
 .nav-links a[aria-current="true"] { color: #ffb43b; }
+.nav-bn { color: var(--masthead-dim); font-size: 0.92em; }
+.nav-links a:hover .nav-bn, .nav-links a[aria-current] .nav-bn { color: inherit; }
 
 /* On phones the header icons would sit between the two link rows; the footer
    carries the same icons, so drop them here. */
@@ -591,7 +593,7 @@ a.writing-title { text-decoration: none; }
 .post-excerpt h2 { margin-top: 0; }
 
 /*
-  Section landing pages (কাজের কাজ, অকাজের কাজ)
+  Section landing pages (Work, হ য ব র ল)
 */
 
 .section-gloss {
@@ -602,6 +604,13 @@ a.writing-title { text-decoration: none; }
   font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+.section-bn {
+  margin-left: 0.35rem;
+  color: var(--muted);
+  font-size: 0.75em;
+  font-weight: 400;
 }
 
 .section-intro { margin: 0 0 1.8rem; color: var(--muted); }
